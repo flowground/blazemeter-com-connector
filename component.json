@@ -1,0 +1,322 @@
+{
+    "title": "Blazemeter API Explorer",
+    "description": "Live API Documentation",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/blazemeter.com/4/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://a.blazemeter.com/api/v4",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "apiKey": {
+                "label": "api_key (apiKey)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "active_sessions": {
+            "main": "./lib/actions/active_sessions.js",
+            "title": "&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/active_sessions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "panic_terminate": {
+            "main": "./lib/actions/panic_terminate.js",
+            "title": "&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "multipart/form-data": "multipart/form-data",
+                        "text/csv": "text/csv",
+                        "text/plain": "text/plain"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/panic_terminate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "retrieveCollections": {
+            "main": "./lib/actions/retrieveCollections.js",
+            "title": "List organization multi-tests&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/retrieveCollections.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "retrieveInvites": {
+            "main": "./lib/actions/retrieveInvites.js",
+            "title": "&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/retrieveInvites.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "retrieveLocations": {
+            "main": "./lib/actions/retrieveLocations.js",
+            "title": "Get user available locations&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/retrieveLocations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "retrieveMasters": {
+            "main": "./lib/actions/retrieveMasters.js",
+            "title": "List user private masters&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/retrieveMasters.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_user_password": {
+            "main": "./lib/actions/patch_user_password.js",
+            "title": "Update user name&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "multipart/form-data": "multipart/form-data",
+                        "text/csv": "text/csv",
+                        "text/plain": "text/plain"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_user_password.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_user_password": {
+            "main": "./lib/actions/post_user_password.js",
+            "title": "Update user name&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "multipart/form-data": "multipart/form-data",
+                        "text/csv": "text/csv",
+                        "text/plain": "text/plain"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_user_password.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_user_password": {
+            "main": "./lib/actions/put_user_password.js",
+            "title": "Update user name&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "multipart/form-data": "multipart/form-data",
+                        "text/csv": "text/csv",
+                        "text/plain": "text/plain"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_user_password.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "retrieveProjects": {
+            "main": "./lib/actions/retrieveProjects.js",
+            "title": "Get user projects&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/retrieveProjects.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "register_retrieve": {
+            "main": "./lib/actions/register_retrieve.js",
+            "title": "Registration&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/register_retrieve.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "register": {
+            "main": "./lib/actions/register.js",
+            "title": "Registration&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "multipart/form-data": "multipart/form-data",
+                        "text/csv": "text/csv",
+                        "text/plain": "text/plain"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/register.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "retrieveTests": {
+            "main": "./lib/actions/retrieveTests.js",
+            "title": "List user private tests&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/retrieveTests.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "top": {
+            "main": "./lib/actions/top.js",
+            "title": "&nbsp; <i class=\"fa fa-lg fa-unlock-alt\"></i>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/top.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

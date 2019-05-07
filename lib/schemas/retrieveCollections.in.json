@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "skip": {
+            "required": false,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
